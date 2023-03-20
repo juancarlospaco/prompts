@@ -1,0 +1,42 @@
+# Ignore files with no extension
+*
+!*/
+!*.*
+!CODEOWNERS
+
+
+# JS/TS
+*.js
+*.ts
+
+
+# Python
+*.py[cod]
+
+
+# Misc
+temp*.*
+temp
+*.txt
+*.log
+
+
+# C/CPP
+*.c
+*.h
+*.hpp
+*.cpp
+*.asm
+*.o
+
+
+# Nim
+nimcache/
+nimblecache/
+htmldocs/
+docs/nimcache/
+docs/nimcache/runnableExamples/
+docs/nimcache
+*.json
+*.nims
+*.exe

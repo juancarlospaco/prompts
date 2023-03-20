@@ -1,0 +1,19 @@
+name: Add Stars
+
+on: [watch]
+
+jobs:
+  addstars:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Add Stars to Readme
+      run: |
+        echo -e ":star: [@${{github.actor}}](https://github.com/${{github.actor}} '${{github.event.repository.updated_at}}')\t" >> README.md
+        # echo -e "<img src='${{github.event.sender.avatar_url}}' width=25 height=25 title='${{github.event.repository.updated_at}}' alt='https://github.com/${{github.actor}}'/>\t" >> README.md
+
+    - name: Commit changes
+      uses: elstudio/actions-js-build/commit@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUSH_BRANCH: 'nim'
